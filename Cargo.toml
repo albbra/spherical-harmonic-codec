@@ -1,0 +1,34 @@
+[package]
+name = "spherical-harmonic-codec"
+version = "0.1.0"
+edition = "2024"
+
+description = "Fast, parallel spherical-harmonic codec for equirectangular RGB images."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/albbra/spherical-harmonic-codec"
+readme = "README.md"
+
+# Default lib crate name from the package name; spelled out for clarity.
+[lib]
+name = "spherical_harmonic_codec"
+path = "src/lib.rs"
+
+# Short binary alias.
+[[bin]]
+name = "shc"
+path = "src/main.rs"
+
+[dependencies]
+image    = "0.25"
+rayon    = "1.10"
+thiserror = "1"
+anyhow   = "1"
+clap     = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[dev-dependencies]
+tempfile = "3"
