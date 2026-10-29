@@ -4,9 +4,16 @@ version = "0.1.0"
 edition = "2024"
 
 description = "Fast, parallel spherical-harmonic codec for equirectangular RGB images."
-license = "MIT OR Apache-2.0"
+license = "Apache-2.0"
 repository = "https://github.com/albbra/spherical-harmonic-codec"
 readme = "README.md"
+
+keywords    = ["spherical-harmonics", "equirectangular", "graphics", "image-processing", "compression"]
+categories  = ["graphics", "multimedia::images", "science"]
+
+authors      = ["albbra"]   # deprecated but still rendered
+homepage     = "https://github.com/albbra/spherical-harmonic-codec"
+documentation = "https://docs.rs/spherical-harmonic-codec"
 
 # Default lib crate name from the package name; spelled out for clarity.
 [lib]
@@ -29,6 +36,3 @@ clap     = { version = "4", features = ["derive"] }
 opt-level = 3
 lto = "thin"
 codegen-units = 1
-
-[dev-dependencies]
-tempfile = "3"
